@@ -14,17 +14,69 @@ const corporate = [
       "One (1) festival t-shirt",
     ],
   },
-  { level: "STAR Level – $1,000" },
-  { level: "PRODUCER Level – $2,500" },
-  { level: "DIRECTOR Level – $5,000" },
-  { level: "Festival Sponsor – $10,000" },
+  {
+    level: "STAR Level – $1,000",
+    benefits: [
+      "Company/name listed in festival program",
+      "Company/name listed on festival web site",
+      "Two (2) weekend passes to the festival",
+      "Two (2) festival t-shirts",
+      "Featured in promotional video shown before all screenings, social media, web site (small logo)",
+    ],
+  },
+  {
+    level: "PRODUCER Level – $2,500",
+    benefits: [
+      "Company/name listed in festival program",
+      "Company/name listed on festival web site",
+      "Three (3) weekend passes to the festival",
+      "Three (3) festival t-shirts",
+      "Featured in promotional video shown before all screenings, social media, web site (medium logo)",
+    ],
+  },
+  {
+    level: "DIRECTOR Level – $5,000",
+    benefits: [
+      "Company/name listed in festival program",
+      "Company/name listed on festival web site",
+      "Representative has opportunity to speak during Opening Night Film introduction",
+      "Five (5) weekend passes to the festival",
+      "Five (5) festival t-shirts",
+      "Featured in promotional video shown before all screenings, social media, web site (large)",
+    ],
+  },
+  {
+    level: "Festival Sponsor – $10,000",
+    benefits: [
+      "Company/name featured prominently during all events and all promotional material as lead sponsor of the festival",
+      "Representative has opportunity to speak during Opening Night Film introduction and Closing Awards Ceremony",
+      "Ten (10) weekend passes to the festival (includes five tickets to all films and events)",
+      "Ten (10) festival t-shirts",
+      "Featured in promotional video shown before all screenings, social media, web site (large)",
+    ],
+  },
 ];
 
 const individual = [
   { level: "KEY GRIP Level – $25", benefits: ["Name listed on an insert in the festival program"] },
-  { level: "GAFFER Level – $50" },
-  { level: "EDITOR Level – $100" },
-  { level: "CINEMATOGRAPHER Level – $200" },
+  {
+    level: "GAFFER Level – $50",
+    benefits: ["Name listed on an insert in the festival program and on festival web site"],
+  },
+  {
+    level: "EDITOR Level – $100",
+    benefits: [
+      "Name listed on an insert in the festival program and on festival web site",
+      "Plus one (1) festival t-shirt",
+    ],
+  },
+  {
+    level: "CINEMATOGRAPHER Level – $200",
+    benefits: [
+      "Name listed on an insert in the festival program and on festival web site",
+      "Plus two (2) festival t-shirts",
+    ],
+  },
 ];
 
 export default function SponsorPage() {
@@ -70,7 +122,7 @@ export default function SponsorPage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/festival/donate">Become a Sponsor Online</Button>
-            <Button href="/sponsorship-opportunities-2026.pdf" external variant="outline">
+            <Button href="/sponsorship-opportunities-2026.pdf" external variant="outlineFestival">
               Download the Sponsorship Flyer
             </Button>
           </div>
