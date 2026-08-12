@@ -70,9 +70,8 @@ export default function SponsorPage() {
           </div>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button href="/festival/donate">Become a Sponsor Online</Button>
-            {/* TODO: replace with the real sponsorship flyer PDF (see STATUS.md) */}
-            <Button href={site.contactEmail ? `mailto:${site.contactEmail}` : "#"} external variant="outline">
-              Request the Sponsorship Flyer
+            <Button href="/sponsorship-opportunities-2026.pdf" external variant="outline">
+              Download the Sponsorship Flyer
             </Button>
           </div>
         </div>

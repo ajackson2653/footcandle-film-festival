@@ -53,8 +53,9 @@ These were flagged rather than guessed. Text is preserved as‑is for now.
   hosts the Eventive welcome embed (mirrors the WordPress landing).
 - ~~**Sponsor page** wording~~ — RESOLVED 2026-08-12: updated to Sept 18–27, 2026
   and "twelfth year." Tweak freely if you'd like different phrasing.
-- **Sponsorship flyer** — the "Request the Sponsorship Flyer" button is a mailto
-  fallback. → _Still need the actual flyer PDF to host as a direct download._
+- ~~**Sponsorship flyer**~~ — RESOLVED 2026-08-12: flyer PDF hosted at
+  `/sponsorship-opportunities-2026.pdf`; "Download the Sponsorship Flyer" button
+  links to it. (Hosted as provided — the PDF could not be previewed in-tool.)
 - ~~**Past Festivals**~~ — RESOLVED 2026-08-12: 2023 & 2024 now link to their
   archive summaries; 2015 has no summary page (verified 404), left unlinked to
   match the current site.
