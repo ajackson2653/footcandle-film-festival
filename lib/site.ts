@@ -28,6 +28,9 @@ export const site = {
   },
 
   shopUrl: "https://footcandle-film-festival.printful.me/",
+
+  // YouTube video ID featured on the homepage (above the FilmLAB section).
+  homeVideoId: "uOxO4LoWToc",
 } as const;
 
 const ev = `https://${site.eventiveOrg}.eventive.org`;

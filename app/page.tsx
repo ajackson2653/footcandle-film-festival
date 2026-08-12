@@ -1,6 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Button, SectionHeading } from "@/components/ui";
 import { site } from "@/lib/site";
+
+// Quick-access boxes under the intro. Colors complement the 2026 poster
+// (teal sky / gold beam / warm accent).
+const festivalBoxes = [
+  { label: "List of Films", href: "/festival/films", bg: "#12707C", fg: "#ffffff" },
+  { label: "Festival Schedule", href: "/festival/schedule", bg: "#E4A72B", fg: "#111111" },
+  { label: "Tickets & Passes", href: "/festival/passes", bg: "#C1522F", fg: "#ffffff" },
+];
 
 const features = [
   {
@@ -50,14 +59,45 @@ export default function HomePage() {
 
       {/* Intro */}
       <section className="border-b border-border">
-        <div className="container-fc py-16 md:py-20 text-center max-w-3xl">
-          <SectionHeading center>The {site.festivalYear} Film Festival</SectionHeading>
-          <div className="prose-fc mt-6">
-            <p>{site.tagline}</p>
+        <div className="container-fc py-16 md:py-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionHeading center>The {site.festivalYear} Film Festival</SectionHeading>
+            <div className="prose-fc mt-6">
+              <p>{site.tagline}</p>
+            </div>
           </div>
-          <div className="mt-8">
-            <Button href="/festival">Enter the Festival Site</Button>
+
+          {/* Quick-access color boxes */}
+          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-3">
+            {festivalBoxes.map((b) => (
+              <Link
+                key={b.href}
+                href={b.href}
+                style={{ backgroundColor: b.bg, color: b.fg }}
+                className="group flex flex-col items-center justify-center rounded-sm px-6 py-12 text-center transition duration-200 hover:-translate-y-1 hover:brightness-110"
+              >
+                <span className="text-xl font-bold uppercase tracking-wide md:text-2xl">{b.label}</span>
+                <span className="mt-2 text-sm font-semibold uppercase tracking-widest opacity-80">View →</span>
+              </Link>
+            ))}
           </div>
+
+          <div className="mt-10 text-center">
+            <Button href="/festival" variant="outline">Enter the Festival Site</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured video — full width */}
+      <section className="border-b border-border bg-black">
+        <div className="relative w-full aspect-video">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube.com/embed/${site.homeVideoId}?rel=0`}
+            title={`${site.name} video`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </div>
       </section>
 

@@ -36,15 +36,18 @@ export function EventiveEmbed({ href, title }: { href: string; title: string }) 
   }, [href, title]);
 
   return (
-    <div className="container-fc py-8">
-      {/* Fallback link for no-JS / crawlers */}
-      <div ref={containerRef} className="min-h-[600px]">
-        <noscript>
-          <a href={href} className="text-accent underline">
-            {title}
-          </a>
-        </noscript>
+    // White backdrop so the Eventive embed (which renders on white) blends in.
+    <section className="bg-white text-black">
+      <div className="container-fc py-8">
+        {/* Fallback link for no-JS / crawlers */}
+        <div ref={containerRef} className="min-h-[600px]">
+          <noscript>
+            <a href={href} className="text-[#12707C] underline">
+              {title}
+            </a>
+          </noscript>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
