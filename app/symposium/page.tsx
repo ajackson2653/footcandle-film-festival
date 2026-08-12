@@ -15,9 +15,9 @@ export default function SymposiumPage() {
         title="Filmmaker Symposium"
         subtitle={
           <>
-            Thursday, September 25th &nbsp;•&nbsp; 3:00pm–5:00pm
+            Thursday, September 24th &nbsp;•&nbsp; 3:00pm–5:00pm
             <br />
-            Kaiser Community Room at the SALT Block — Hickory, North Carolina
+            Hickory Community Theatre — Hickory, North Carolina
           </>
         }
       />

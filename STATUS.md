@@ -42,9 +42,9 @@ These were flagged rather than guessed. Text is preserved as‑is for now.
   announced?", "What are the awards and prizes?", "When/where to buy tickets?")
   have **no answer text** on the live site. Currently show "Details coming soon."
   → _Please provide the answers._
-- **Symposium date mismatch** — homepage says **Thursday, Sept 24 · Hickory
-  Community Theater**; the Symposium page says **Thursday, Sept 25, 3–5pm ·
-  Kaiser Community Room (SALT Block)**. → _Which is correct?_
+- ~~**Symposium date mismatch**~~ — RESOLVED 2026-08-12: Symposium is **Thursday,
+  Sept 24 · Hickory Community Theatre**. Symposium page updated (kept the
+  3:00–5:00pm time; confirm if that changes).
 - **FilmLAB dates** — homepage says the FilmLAB runs **Sept 18–21**; the FilmLAB
   page timeline lists **Sept 19 / 22 / 25 / 28** (appears to be last year's dates).
   → _Confirm the 2026 FilmLAB schedule._
