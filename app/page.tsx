@@ -88,16 +88,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured video — full width */}
+      {/* Featured video — constrained width with clean left/right margins */}
       <section className="border-b border-border bg-black">
-        <div className="relative w-full aspect-video">
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src={`https://www.youtube.com/embed/${site.homeVideoId}?rel=0`}
-            title={`${site.name} video`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+        <div className="container-fc py-12 md:py-16">
+          <div className="relative mx-auto aspect-video w-full overflow-hidden rounded-sm border border-border">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src={`https://www.youtube.com/embed/${site.homeVideoId}?rel=0`}
+              title={`${site.name} video`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
 
