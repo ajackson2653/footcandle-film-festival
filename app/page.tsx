@@ -61,18 +61,26 @@ function BoxIcon({ name }: { name: string }) {
 const features = [
   {
     title: "In-Person & Online Screenings",
+    bg: "#12707C",
+    fg: "#ffffff",
     body: "Films in competition for the Footcandle Film Festival, selected from hundreds of submissions received throughout the year, will be shown over a three-day period. There will be over 40 films shown over this weekend, with the weekend culminating in an Awards Ceremony on Sunday evening recognizing the best of the films shown throughout the festival.",
   },
   {
     title: "Scriptwriting Competition",
+    bg: "#E4A72B",
+    fg: "#111111",
     body: "Each year screenwriters from around the world submit their screenplays for consideration in our competition. At Sunday night's awards ceremony a winner from all the entries received will be announced and some selected scenes will be presented in a video clip.",
   },
   {
     title: "Children's Short Film Showcase",
+    bg: "#C1522F",
+    fg: "#ffffff",
     body: "A curated collection of short films from filmmakers of various backgrounds providing young folks an opportunity to learn about the creative art form that is film. The event is free and designed for a younger audience (ages 8 - 14) and their families.",
   },
   {
     title: "Outdoor Screening",
+    bg: "#21496B",
+    fg: "#ffffff",
     body: "Watch the skies! Experience Close Encounters of the Third Kind the way it was meant to be seen—on the big screen, under the stars. Join the Footcandle Film Festival for an unforgettable outdoor screening of Spielberg's sci-fi classic, filled with mystery, wonder, and a few visitors from beyond.",
   },
 ];
@@ -221,10 +229,13 @@ export default function HomePage() {
         <div className="container-fc py-16">
           <div className="grid gap-8 md:grid-cols-2">
             {features.map((f) => (
-              <div key={f.title} className="border border-border bg-black p-8 rounded-sm">
-                <h3 className="text-xl text-white">{f.title}</h3>
-                <span className="mt-3 block h-1 w-12 bg-accent" />
-                <p className="mt-4 text-muted font-light leading-relaxed">{f.body}</p>
+              <div
+                key={f.title}
+                style={{ backgroundColor: f.bg, color: f.fg }}
+                className="rounded-sm p-8"
+              >
+                <h3 className="text-xl">{f.title}</h3>
+                <p className="mt-4 font-light leading-relaxed opacity-90">{f.body}</p>
               </div>
             ))}
           </div>
@@ -234,7 +245,7 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="border-b border-border">
         <div className="container-fc py-16 max-w-3xl">
-          <SectionHeading center>Frequently Asked Questions</SectionHeading>
+          <SectionHeading center accentColor="#E4A72B">Frequently Asked Questions</SectionHeading>
           <div className="mt-8 divide-y divide-border border-y border-border">
             {faqs.map((f) => (
               <details key={f.q} className="group py-4">
@@ -252,10 +263,10 @@ export default function HomePage() {
       </section>
 
       {/* Funding acknowledgment */}
-      <section>
+      <section className="bg-white text-black">
         <div className="container-fc py-14 flex flex-col items-center gap-6 text-center">
-          <Image src="/images/sponsor-acc.png" alt="Arts Culture Catawba" width={160} height={80} className="h-16 w-auto" />
-          <p className="max-w-3xl text-sm font-light text-muted leading-relaxed">
+          <Image src="/images/sponsor-acc.png" alt="Arts Culture Catawba" width={400} height={200} className="h-32 w-auto" />
+          <p className="max-w-3xl text-lg leading-relaxed text-black">
             This project has been supported in past years by the Arts Culture Catawba through the North Carolina Arts
             Council, a division of the Department of Natural and Cultural Resources, with funding from the State of North
             Carolina from the National Endowment for the Arts.

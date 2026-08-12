@@ -61,11 +61,22 @@ export function PageBanner({ title, subtitle }: { title: string; subtitle?: Reac
 }
 
 // Section heading with a small accent rule.
-export function SectionHeading({ children, center = false }: { children: ReactNode; center?: boolean }) {
+export function SectionHeading({
+  children,
+  center = false,
+  accentColor,
+}: {
+  children: ReactNode;
+  center?: boolean;
+  accentColor?: string;
+}) {
   return (
     <div className={center ? "text-center" : ""}>
       <h2 className="text-3xl md:text-4xl">{children}</h2>
-      <span className={`mt-4 block h-1 w-16 bg-accent ${center ? "mx-auto" : ""}`} />
+      <span
+        className={`mt-4 block h-1 w-16 ${accentColor ? "" : "bg-accent"} ${center ? "mx-auto" : ""}`}
+        style={accentColor ? { backgroundColor: accentColor } : undefined}
+      />
     </div>
   );
 }
