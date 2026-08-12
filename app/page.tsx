@@ -130,8 +130,10 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
-            <Button href="/festival" variant="outline">Enter the Festival Site</Button>
+          <div className="mx-auto mt-5 max-w-4xl">
+            <Button href="/festival" variant="outlineFestival" size="lg" fullWidth>
+              Enter the Festival Site
+            </Button>
           </div>
         </div>
       </section>
@@ -166,7 +168,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-6">
-              <Button href="/filmlab" variant="outline">Learn More &amp; Register Your Team</Button>
+              <Button href="/filmlab" variant="outlineFestival">Learn More &amp; Register Your Team</Button>
             </div>
           </div>
           <div className="order-1 md:order-2">
@@ -206,7 +208,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-6">
-              <Button href="/symposium" variant="outline">
+              <Button href="/symposium" variant="outlineFestival">
                 Learn More &amp; Register for the FREE Filmmaker Symposium
               </Button>
             </div>

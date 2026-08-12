@@ -5,18 +5,34 @@ type ButtonProps = {
   href: string;
   children: ReactNode;
   external?: boolean;
-  variant?: "solid" | "outline";
+  variant?: "solid" | "outline" | "outlineFestival";
+  size?: "md" | "lg";
+  fullWidth?: boolean;
   className?: string;
 };
 
-export function Button({ href, children, external, variant = "solid", className = "" }: ButtonProps) {
+export function Button({
+  href,
+  children,
+  external,
+  variant = "solid",
+  size = "md",
+  fullWidth = false,
+  className = "",
+}: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors rounded-sm";
-  const styles =
-    variant === "solid"
-      ? "bg-accent text-black hover:bg-accent-hover"
-      : "border border-white text-white hover:bg-white hover:text-black";
-  const cls = `${base} ${styles} ${className}`;
+    "inline-flex items-center justify-center font-semibold uppercase tracking-wide transition-colors rounded-sm";
+  const sizes = size === "lg" ? "px-8 py-4 text-lg md:text-xl" : "px-7 py-3 text-sm";
+  const styleMap: Record<NonNullable<ButtonProps["variant"]>, string> = {
+    solid: "bg-accent text-black hover:bg-accent-hover",
+    outline: "border border-white text-white hover:bg-white hover:text-black",
+    // Fills with the primary festival teal on hover; text stays white/visible.
+    outlineFestival:
+      "border border-white text-white hover:bg-[#12707C] hover:border-[#12707C] hover:text-white",
+  };
+  const styles = styleMap[variant];
+  const width = fullWidth ? "w-full" : "";
+  const cls = `${base} ${sizes} ${styles} ${width} ${className}`;
 
   if (external) {
     return (
