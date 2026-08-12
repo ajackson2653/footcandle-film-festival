@@ -6,10 +6,57 @@ import { site } from "@/lib/site";
 // Quick-access boxes under the intro. Colors complement the 2026 poster
 // (teal sky / gold beam / warm accent).
 const festivalBoxes = [
-  { label: "List of Films", href: "/festival/films", bg: "#12707C", fg: "#ffffff" },
-  { label: "Festival Schedule", href: "/festival/schedule", bg: "#E4A72B", fg: "#111111" },
-  { label: "Tickets & Passes", href: "/festival/passes", bg: "#C1522F", fg: "#ffffff" },
+  { label: "List of Films", href: "/festival/films", bg: "#12707C", fg: "#ffffff", icon: "film" },
+  { label: "Festival Schedule", href: "/festival/schedule", bg: "#E4A72B", fg: "#111111", icon: "calendar" },
+  { label: "Tickets & Passes", href: "/festival/passes", bg: "#C1522F", fg: "#ffffff", icon: "ticket" },
 ];
+
+function BoxIcon({ name }: { name: string }) {
+  const common = {
+    width: 44,
+    height: 44,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  };
+  if (name === "film") {
+    return (
+      <svg {...common}>
+        <rect width="18" height="18" x="3" y="3" rx="2" />
+        <path d="M7 3v18" />
+        <path d="M3 7.5h4" />
+        <path d="M3 12h18" />
+        <path d="M3 16.5h4" />
+        <path d="M17 3v18" />
+        <path d="M17 7.5h4" />
+        <path d="M17 16.5h4" />
+      </svg>
+    );
+  }
+  if (name === "calendar") {
+    return (
+      <svg {...common}>
+        <path d="M8 2v4" />
+        <path d="M16 2v4" />
+        <rect width="18" height="18" x="3" y="4" rx="2" />
+        <path d="M3 10h18" />
+      </svg>
+    );
+  }
+  // ticket
+  return (
+    <svg {...common}>
+      <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+      <path d="M13 5v2" />
+      <path d="M13 11v2" />
+      <path d="M13 17v2" />
+    </svg>
+  );
+}
 
 const features = [
   {
@@ -76,7 +123,8 @@ export default function HomePage() {
                 style={{ backgroundColor: b.bg, color: b.fg }}
                 className="group flex flex-col items-center justify-center rounded-sm px-6 py-12 text-center transition duration-200 hover:-translate-y-1 hover:brightness-110"
               >
-                <span className="text-xl font-bold uppercase tracking-wide md:text-2xl">{b.label}</span>
+                <BoxIcon name={b.icon} />
+                <span className="mt-4 text-xl font-bold uppercase tracking-wide md:text-2xl">{b.label}</span>
                 <span className="mt-2 text-sm font-semibold uppercase tracking-widest opacity-80">View →</span>
               </Link>
             ))}

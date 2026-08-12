@@ -115,7 +115,7 @@ function NavLink({
   const active =
     !isExternal && (pathname === item.href || (pathname?.startsWith(item.href) ?? false));
 
-  const classes = `text-sm font-semibold uppercase tracking-wide transition-colors ${
+  const classes = `text-base font-semibold uppercase tracking-wide transition-colors ${
     active ? "text-accent" : "text-white hover:text-accent"
   } ${className}`;
 
