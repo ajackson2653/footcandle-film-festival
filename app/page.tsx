@@ -299,7 +299,7 @@ export default function HomePage() {
       {/* Funding acknowledgment */}
       <section className="bg-white text-black">
         <div className="container-fc py-14 flex flex-col items-center gap-6 text-center">
-          <Image src="/images/sponsor-acc.png" alt="Arts Culture Catawba" width={400} height={200} className="h-32 w-auto" />
+          <Image src="/images/sponsor-acc-full.png" alt="Arts Culture Catawba" width={534} height={395} className="h-44 w-auto sm:h-52" />
           <p className="max-w-3xl text-lg leading-relaxed text-black">
             This project has been supported in past years by the Arts Culture Catawba through the North Carolina Arts
             Council, a division of the Department of Natural and Cultural Resources, with funding from the State of North
