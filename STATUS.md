@@ -49,16 +49,15 @@ These were flagged rather than guessed. Text is preserved as‑is for now.
   Register button now → `survey.jacksoninsight.com/zs/V8C5Yv`.
 - ~~**Symposium signup link**~~ — RESOLVED 2026-08-12: now →
   `footcandlefilmfestival2026.eventive.org/schedule/6a7cb181495dcc5583b3d60f`.
-- **"Enter the Festival Site"** on the homepage linked to the **2025** festival
-  page (a leftover). It now points to `/festival`. → _OK, or link straight to the
-  Eventive welcome page?_
-- **Sponsor page** intro referenced "returning Sept 19–28, **2025**" and "eighth
-  year." Softened to remove the hard 2025 references. → _Confirm current wording._
-- **Sponsorship flyer** — the "Download a Print‑Ready Sponsorship Flyer" button
-  needs the actual PDF. Currently a "Request the Sponsorship Flyer" mailto. →
-  _Send the PDF and we'll host it._
-- **Past Festivals** — 2016–2022 posters link to the archive summaries; **2023,
-  2024, 2015** have no summary link yet. → _Provide URLs if they exist._
+- ~~**"Enter the Festival Site"**~~ — RESOLVED: points to `/festival`, which now
+  hosts the Eventive welcome embed (mirrors the WordPress landing).
+- ~~**Sponsor page** wording~~ — RESOLVED 2026-08-12: updated to Sept 18–27, 2026
+  and "twelfth year." Tweak freely if you'd like different phrasing.
+- **Sponsorship flyer** — the "Request the Sponsorship Flyer" button is a mailto
+  fallback. → _Still need the actual flyer PDF to host as a direct download._
+- ~~**Past Festivals**~~ — RESOLVED 2026-08-12: 2023 & 2024 now link to their
+  archive summaries; 2015 has no summary page (verified 404), left unlinked to
+  match the current site.
 
 ## 💡 Notes / easy tweaks
 

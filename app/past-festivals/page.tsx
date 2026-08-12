@@ -4,11 +4,11 @@ import { PageBanner } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Past Festivals" };
 
-// Poster grid. Links for 2016–2022 point to the existing archive summaries.
-// 2023/2024/2025 summary links are TBD (flagged in STATUS.md).
+// Poster grid. Links point to the existing archive summaries. 2015 has no
+// summary page (verified 404), so it stays unlinked.
 const years: { year: number; img: string; href?: string }[] = [
-  { year: 2024, img: "/images/posters/2024.jpg" },
-  { year: 2023, img: "/images/posters/2023.jpg" },
+  { year: 2024, img: "/images/posters/2024.jpg", href: "https://archive.footcandlefilmfestival.com/2024-festival/" },
+  { year: 2023, img: "/images/posters/2023.jpg", href: "https://archive.footcandlefilmfestival.com/2023-festival/" },
   { year: 2022, img: "/images/posters/2022.jpeg", href: "https://archive.footcandlefilmfestival.com/2022-footcandle-film-festival-summary/" },
   { year: 2021, img: "/images/posters/2021.jpg", href: "https://archive.footcandlefilmfestival.com/2021-footcandle-film-festival-summary/" },
   { year: 2020, img: "/images/posters/2020.jpeg", href: "https://archive.footcandlefilmfestival.com/2020-footcandle-film-festival-recap/" },

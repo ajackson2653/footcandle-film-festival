@@ -35,17 +35,18 @@ export default function SponsorPage() {
       <section className="container-fc py-14 max-w-3xl">
         <div className="prose-fc">
           <p>
-            The Footcandle Film Festival is returning to Hickory, North Carolina! This is an exciting weekend of film
-            screenings, with films being submitted from around the world for consideration. The best reviewed films will
-            be shown during the weekend, starting with an opening night event and closing with an awards ceremony. The
-            festival is held at the Hickory Community Theatre with special events at the SALT Block, the Carolina
-            Theater, and the Hum outdoor concert venue.
+            The Footcandle Film Festival is returning to Hickory, North Carolina on {site.festivalDates}! This is an
+            exciting ten days of film screenings, with films being submitted from around the world for consideration. The
+            best reviewed films will be shown during the festival, starting with an opening night event and closing with
+            an awards ceremony. The festival is held at the Hickory Community Theatre with special events at the SALT
+            Block, the Carolina Theater, and the Hum outdoor concert venue.
           </p>
           <p>
-            This festival continues to be a showcase event for the Catawba County area. To make it a success, we depend
-            on support from local businesses, organizations, and individuals. Every dollar spent on this festival goes
-            toward creating an experience that attendees, filmmakers, and other visitors to the area will remember — and
-            help "spread the word" for continued festival growth.
+            This festival continues to be a showcase event for the Catawba County area, and we are making every effort to
+            have our twelfth year be just as successful as the first. To make it a success, we depend on support from
+            local businesses, organizations, and individuals. Every dollar spent on this festival goes toward creating an
+            experience that attendees, filmmakers, and other visitors to the area will remember — and help "spread the
+            word" for continued festival growth.
           </p>
           <p>
             The festival is produced by the Footcandle Film Society, a Catawba County-based 501(c)(3) non-profit
