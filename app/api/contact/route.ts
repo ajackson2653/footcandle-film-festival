@@ -60,24 +60,31 @@ export async function POST(req: Request) {
     );
   }
 
-  // Optional email notification via Resend, if configured.
-  const resendKey = process.env.RESEND_API_KEY;
-  const resendFrom = process.env.RESEND_FROM;
-  if (resendKey && resendFrom) {
+  // Optional email notification via Brevo, if configured.
+  const brevoKey = process.env.BREVO_API_KEY;
+  const brevoSender = process.env.BREVO_SENDER_EMAIL;
+  if (brevoKey && brevoSender) {
     try {
-      await fetch("https://api.resend.com/emails", {
+      const res = await fetch("https://api.brevo.com/v3/smtp/email", {
         method: "POST",
-        headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+        headers: {
+          "api-key": brevoKey,
+          "Content-Type": "application/json",
+          accept: "application/json",
+        },
         body: JSON.stringify({
-          from: resendFrom,
-          to: [CONTACT_TO],
-          reply_to: email,
+          sender: { email: brevoSender, name: process.env.BREVO_SENDER_NAME || "Footcandle Film Festival" },
+          to: [{ email: CONTACT_TO }],
+          replyTo: { email, name },
           subject: `Footcandle contact form: ${name}`,
-          text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+          textContent: `Name: ${name}\nEmail: ${email}\n\n${message}`,
         }),
       });
+      if (!res.ok) {
+        console.error("Brevo notification failed (submission still saved):", res.status, await res.text());
+      }
     } catch (err) {
-      console.error("Resend notification failed (submission still saved):", err);
+      console.error("Brevo notification error (submission still saved):", err);
     }
   }
 

@@ -28,9 +28,9 @@ _Last updated: 2026-08-12_
 2. **Vercel** — import the GitHub repo into the Footcandle Film Society team
    (one‑time "Add New… → Project"). Auto‑deploys thereafter.
 3. **Email notifications (optional)** — to email each contact submission to
-   info@footcandle.org, pick a mail provider (Resend is wired up) and set
-   `RESEND_API_KEY` + `RESEND_FROM`. Without it, submissions are still stored in
-   Supabase.
+   info@footcandle.org, set `BREVO_API_KEY` + `BREVO_SENDER_EMAIL`
+   (+ optional `BREVO_SENDER_NAME`). Uses Brevo's transactional API. Without it,
+   submissions are still stored in Supabase.
 4. **Domain** — when approved, point `footcandlefilmfestival.com` DNS (DreamHost)
    at Vercel. We test on the Vercel preview URL first; no downtime.
 
