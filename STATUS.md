@@ -1,6 +1,6 @@
 # Project Status
 
-_Last updated: 2026-08-12_
+_Last updated: 2026-08-12 — LAUNCH-READY; awaiting DNS cutover_
 
 ## ✅ Done (first pass)
 
@@ -20,19 +20,21 @@ _Last updated: 2026-08-12_
 - All graphics pulled from the current site into `public/images/`.
 - Production build passes with no type errors.
 
-## 🔌 Needs you (to go live)
+## 🚀 Launch status
 
-1. **Supabase** — from Project Settings → API, provide/enter into Vercel env vars:
-   `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (secret), `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-   Then run `supabase/migrations/0001_contact_submissions.sql` in the SQL Editor.
-2. **Vercel** — import the GitHub repo into the Footcandle Film Society team
-   (one‑time "Add New… → Project"). Auto‑deploys thereafter.
-3. **Email notifications (optional)** — to email each contact submission to
-   info@footcandle.org, set `BREVO_API_KEY` + `BREVO_SENDER_EMAIL`
-   (+ optional `BREVO_SENDER_NAME`). Uses Brevo's transactional API. Without it,
-   submissions are still stored in Supabase.
-4. **Domain** — when approved, point `footcandlefilmfestival.com` DNS (DreamHost)
-   at Vercel. We test on the Vercel preview URL first; no downtime.
+- ✅ **Supabase** — keys in Vercel; `contact_submissions` table live.
+- ✅ **Vercel** — repo imported; live at `footcandle-film-festival.vercel.app`.
+- ✅ **Brevo email** — configured; contact form confirmed delivering to
+  info@footcandle.org (end-to-end test received 2026-08-12).
+- ✅ **Pre-launch audit passed** (2026-08-12): no dead links; zero 2025 refs in
+  the site; all 5 Eventive embeds live on 2026 org; contact form working.
+- ✅ **Sponsorship flyer PDF** verified on the live site by client.
+- ⏳ **Domain cutover** — the only remaining step. Point
+  `footcandlefilmfestival.com` DNS (DreamHost) at Vercel per the cutover
+  instructions. Preserve MX + SPF/DKIM/DMARC (incl. Brevo) records.
+
+_Note: the external Printful shop still lists a "2025" t-shirt — managed in the
+Printful account, not this site._
 
 ## 🚩 Content inconsistencies found on the current site (please confirm)
 
