@@ -88,13 +88,49 @@ const features = [
 const faqs = [
   {
     q: "What Is the Footcandle Film Festival",
-    a: "The Footcandle Film Festival is designed to bring unique, challenging and entertaining films to Western North Carolina every September. The festival is being held by the founders and members of the Footcandle Film Society, a 600-member group dedicated to screening and discussing films on a monthly basis. The society was formed in late 2008 by Alan Jackson & Chris Frye. The inaugural film festival was held in September of 2015.",
+    a: (
+      <p>
+        The Footcandle Film Festival is designed to bring unique, challenging and entertaining films to Western North
+        Carolina every September. The festival is being held by the founders and members of the Footcandle Film Society,
+        a 600-member group dedicated to screening and discussing films on a monthly basis. The society was formed in late
+        2008 by Alan Jackson &amp; Chris Frye. The inaugural film festival was held in September of 2015.
+      </p>
+    ),
   },
-  // NOTE: these three questions have no answer content on the current live site.
-  // Placeholder text below — replace with real copy (see STATUS.md, open item).
-  { q: "When Will The 2026 Film Lineup Be Announced?", a: "" },
-  { q: "What Are The Awards And Prizes?", a: "" },
-  { q: "When and Where Can I Buy 2026 Festival Tickets?", a: "" },
+  {
+    q: "When Will The 2026 Film Lineup Be Announced?",
+    a: (
+      <p>
+        The 2026 film lineup has been announced! You can see all of this year&apos;s selected films on our{" "}
+        <Link href="/festival/films">Film Guide page</Link>.
+      </p>
+    ),
+  },
+  {
+    q: "What Are The Awards And Prizes?",
+    a: (
+      <p>
+        Submissions will be categorized in one of five categories: Narrative Short, Documentary Short, Children&apos;s
+        Short, Narrative Feature, or Documentary Feature. At the festival closing ceremonies awards will be given for
+        Best Narrative Feature ($1,000), Best Narrative Short ($750), Best Documentary Feature ($1,000), Best Documentary
+        Short ($750) and Best International Film ($750) as selected by a panel of judges, and five awards selected by
+        festival attendees — Audience Favorite Narrative Feature ($750), Audience Favorite Documentary Feature ($750),
+        Audience Favorite Narrative Short ($500), Audience Favorite Documentary Short ($500), &amp; Audience Favorite
+        Children&apos;s Short ($500).
+      </p>
+    ),
+  },
+  {
+    q: "When and Where Can I Buy 2026 Festival Tickets?",
+    a: (
+      <p>
+        You can purchase individual tickets to specific film screenings and events, or buy a festival pass that gives you
+        access to everything. Browse what&apos;s playing on the <Link href="/festival/schedule">Schedule</Link> and{" "}
+        <Link href="/festival/films">Film Guide</Link>, or get an all-access pass on the{" "}
+        <Link href="/festival/passes">Passes page</Link>.
+      </p>
+    ),
+  },
 ];
 
 export default function HomePage() {
@@ -253,9 +289,7 @@ export default function HomePage() {
                   <span className="text-lg font-medium uppercase tracking-wide">{f.q}</span>
                   <span className="text-accent text-2xl leading-none transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <div className="prose-fc mt-3">
-                  <p>{f.a || "Details coming soon."}</p>
-                </div>
+                <div className="prose-fc mt-3">{f.a}</div>
               </details>
             ))}
           </div>

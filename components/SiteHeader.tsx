@@ -30,10 +30,10 @@ export function SiteHeader() {
           <Image
             src="/images/logo-footer.png"
             alt={site.name}
-            width={230}
-            height={58}
+            width={288}
+            height={72}
             priority
-            className="h-10 w-auto sm:h-12"
+            className="h-[50px] w-auto sm:h-[60px]"
           />
         </Link>
 

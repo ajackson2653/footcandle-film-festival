@@ -3,10 +3,9 @@ import { Button, PageBanner } from "@/components/ui";
 
 export const metadata: Metadata = { title: "Filmmaker Symposium" };
 
-// NOTE: the current symposium "Sign up" link points at the 2025 Eventive org.
-// Update to the 2026 schedule item once available (flagged in STATUS.md).
+// 2026 Symposium signup (Eventive schedule item), provided by client.
 const SIGNUP_URL =
-  "https://footcandlefilmfestival2025.eventive.org/schedule/687c05b6770f3408c3ecde54";
+  "https://footcandlefilmfestival2026.eventive.org/schedule/6a7cb181495dcc5583b3d60f";
 
 export default function SymposiumPage() {
   return (

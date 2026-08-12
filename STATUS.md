@@ -38,21 +38,17 @@ _Last updated: 2026-08-12_
 
 These were flagged rather than guessed. Text is preserved as‑is for now.
 
-- **FAQ answers missing** — three homepage FAQs ("When will the 2026 lineup be
-  announced?", "What are the awards and prizes?", "When/where to buy tickets?")
-  have **no answer text** on the live site. Currently show "Details coming soon."
-  → _Please provide the answers._
+- ~~**FAQ answers missing**~~ — RESOLVED 2026-08-12: all three FAQ answers
+  (lineup, awards/prizes, tickets) written and linked to the relevant pages.
 - ~~**Symposium date mismatch**~~ — RESOLVED 2026-08-12: Symposium is **Thursday,
   Sept 24 · Hickory Community Theatre**. Symposium page updated (kept the
   3:00–5:00pm time; confirm if that changes).
-- **FilmLAB dates** — homepage says the FilmLAB runs **Sept 18–21**; the FilmLAB
-  page timeline lists **Sept 19 / 22 / 25 / 28** (appears to be last year's dates).
-  → _Confirm the 2026 FilmLAB schedule._
-- **FilmLAB registration** — current copy says registration is **CLOSED**. The
-  "Register Your Team" button points to the existing form
-  (`survey.jacksoninsight.com/zs/mzfq29`). → _Confirm 2026 status + link._
-- **Symposium signup link** points at the **2025** Eventive org. → _Provide the
-  2026 signup link (or we can point it at the 2026 schedule)._
+- ~~**FilmLAB dates**~~ — RESOLVED 2026-08-12: timeline set to Fri Sept 18
+  (kickoff) → Mon Sept 21 → Thu Sept 24 → Sun Sept 27.
+- ~~**FilmLAB registration**~~ — RESOLVED 2026-08-12: "CLOSED" notice removed;
+  Register button now → `survey.jacksoninsight.com/zs/V8C5Yv`.
+- ~~**Symposium signup link**~~ — RESOLVED 2026-08-12: now →
+  `footcandlefilmfestival2026.eventive.org/schedule/6a7cb181495dcc5583b3d60f`.
 - **"Enter the Festival Site"** on the homepage linked to the **2025** festival
   page (a leftover). It now points to `/festival`. → _OK, or link straight to the
   Eventive welcome page?_

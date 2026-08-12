@@ -3,21 +3,20 @@ import { Button, PageBanner, SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = { title: "FilmLAB" };
 
-// NOTE: Copy preserved verbatim from the current site. The dates/year here are
-// inconsistent with the homepage (2025 vs 2026) — flagged in STATUS.md for the
-// team to confirm before launch.
+// 2026 FilmLAB timeline (confirmed by client): kickoff Fri Sept 18; each
+// subsequent milestone follows on its weekday through the closing ceremony.
 const timeline = [
   {
-    when: "Friday, September 19th – 7pm",
+    when: "Friday, September 18th – 7pm",
     what: "FilmLAB KICKOFF @ SALT Block, Kaiser Community Room; at least one member of your team must be in attendance!",
   },
-  { when: "Monday, September 22nd – 8am", what: "FilmLAB entries due (submitted online)" },
+  { when: "Monday, September 21st – 8am", what: "FilmLAB entries due (submitted online)" },
   {
-    when: "Thursday, September 25th – 7pm",
+    when: "Thursday, September 24th – 7pm",
     what: "All FilmLAB entries screened at the FilmLAB Premiere event @ Hickory Community Theatre, Downtown Hickory; followed by drinks with fellow filmmakers",
   },
   {
-    when: "Sunday, September 28th – 7pm",
+    when: "Sunday, September 27th – 7pm",
     what: "FilmLAB winner announced at the Footcandle Film Festival AWARDS CEREMONY @ Hickory Community Theatre",
   },
 ];
@@ -62,17 +61,10 @@ export default function FilmLabPage() {
           </p>
         </div>
 
-        <div className="mt-8 border border-accent/40 bg-surface p-6 rounded-sm">
-          <p className="text-muted font-light leading-relaxed">
-            We're sorry, but registration for the FilmLAB is CLOSED as we have registered the maximum amount of teams we
-            can have this year. Please plan to join us next year for FilmLAB; registration should open the following
-            summer. Thank you!
-          </p>
-          <div className="mt-5">
-            <Button href="https://survey.jacksoninsight.com/zs/mzfq29" external>
-              Register Your Team
-            </Button>
-          </div>
+        <div className="mt-8">
+          <Button href="https://survey.jacksoninsight.com/zs/V8C5Yv" external>
+            Register Your Team
+          </Button>
         </div>
       </section>
 
