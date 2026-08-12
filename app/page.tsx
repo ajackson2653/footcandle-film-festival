@@ -1,0 +1,175 @@
+import Image from "next/image";
+import { Button, SectionHeading } from "@/components/ui";
+import { site } from "@/lib/site";
+
+const features = [
+  {
+    title: "In-Person & Online Screenings",
+    body: "Films in competition for the Footcandle Film Festival, selected from hundreds of submissions received throughout the year, will be shown over a three-day period. There will be over 40 films shown over this weekend, with the weekend culminating in an Awards Ceremony on Sunday evening recognizing the best of the films shown throughout the festival.",
+  },
+  {
+    title: "Scriptwriting Competition",
+    body: "Each year screenwriters from around the world submit their screenplays for consideration in our competition. At Sunday night's awards ceremony a winner from all the entries received will be announced and some selected scenes will be presented in a video clip.",
+  },
+  {
+    title: "Children's Short Film Showcase",
+    body: "A curated collection of short films from filmmakers of various backgrounds providing young folks an opportunity to learn about the creative art form that is film. The event is free and designed for a younger audience (ages 8 - 14) and their families.",
+  },
+  {
+    title: "Outdoor Screening",
+    body: "Watch the skies! Experience Close Encounters of the Third Kind the way it was meant to be seen—on the big screen, under the stars. Join the Footcandle Film Festival for an unforgettable outdoor screening of Spielberg's sci-fi classic, filled with mystery, wonder, and a few visitors from beyond.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What Is the Footcandle Film Festival",
+    a: "The Footcandle Film Festival is designed to bring unique, challenging and entertaining films to Western North Carolina every September. The festival is being held by the founders and members of the Footcandle Film Society, a 600-member group dedicated to screening and discussing films on a monthly basis. The society was formed in late 2008 by Alan Jackson & Chris Frye. The inaugural film festival was held in September of 2015.",
+  },
+  // NOTE: these three questions have no answer content on the current live site.
+  // Placeholder text below — replace with real copy (see STATUS.md, open item).
+  { q: "When Will The 2026 Film Lineup Be Announced?", a: "" },
+  { q: "What Are The Awards And Prizes?", a: "" },
+  { q: "When and Where Can I Buy 2026 Festival Tickets?", a: "" },
+];
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative">
+        <Image
+          src="/images/hero-2026.jpg"
+          alt={`${site.name} ${site.festivalYear}`}
+          width={1600}
+          height={900}
+          priority
+          className="w-full h-auto"
+        />
+      </section>
+
+      {/* Intro */}
+      <section className="border-b border-border">
+        <div className="container-fc py-16 md:py-20 text-center max-w-3xl">
+          <SectionHeading center>The {site.festivalYear} Film Festival</SectionHeading>
+          <div className="prose-fc mt-6">
+            <p>{site.tagline}</p>
+          </div>
+          <div className="mt-8">
+            <Button href="/festival">Enter the Festival Site</Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FilmLAB */}
+      <section className="border-b border-border bg-surface">
+        <div className="container-fc py-16 grid gap-10 md:grid-cols-2 items-center">
+          <div className="order-2 md:order-1">
+            <SectionHeading>The Footcandle FilmLAB</SectionHeading>
+            <div className="prose-fc mt-6">
+              <p>
+                The Footcandle FilmLAB is an exhilarating 60-hour filmmaking competition held from September 18th to
+                21st, where creative minds unite in dynamic teams to craft unique short films under intense time
+                constraints. This event pushes collaboration and innovation to the limit, culminating in a public
+                screening where the winning film earns a cash prize, celebrating the art of storytelling and cinematic
+                excellence.
+              </p>
+            </div>
+            <div className="mt-6">
+              <Button href="/filmlab" variant="outline">Learn More &amp; Register Your Team</Button>
+            </div>
+          </div>
+          <div className="order-1 md:order-2">
+            <Image
+              src="/images/card-filmlab.jpg"
+              alt="Footcandle FilmLAB"
+              width={800}
+              height={533}
+              className="w-full h-auto rounded-sm"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Filmmaker Symposium */}
+      <section className="border-b border-border">
+        <div className="container-fc py-16 grid gap-10 md:grid-cols-2 items-center">
+          <div>
+            <Image
+              src="/images/photo-symposium.jpg"
+              alt="Filmmaker Symposium"
+              width={800}
+              height={533}
+              className="w-full h-auto rounded-sm"
+            />
+          </div>
+          <div>
+            <SectionHeading>Filmmaker Symposium</SectionHeading>
+            <p className="mt-4 text-sm uppercase tracking-wide text-accent">
+              Thursday, Sept 24th • Hickory Community Theater, Hickory, NC
+            </p>
+            <div className="prose-fc mt-4">
+              <p>
+                Interested in independent filmmaking, but not sure where to start? Join us for the Filmmaker Symposium,
+                part of this year's Footcandle Film Festival! Designed for aspiring filmmakers and creative dreamers,
+                this special session offers real-world insights into the world of independent filmmaking.
+              </p>
+            </div>
+            <div className="mt-6">
+              <Button href="/symposium" variant="outline">
+                Learn More &amp; Register for the FREE Filmmaker Symposium
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature grid */}
+      <section className="border-b border-border bg-surface">
+        <div className="container-fc py-16">
+          <div className="grid gap-8 md:grid-cols-2">
+            {features.map((f) => (
+              <div key={f.title} className="border border-border bg-black p-8 rounded-sm">
+                <h3 className="text-xl text-white">{f.title}</h3>
+                <span className="mt-3 block h-1 w-12 bg-accent" />
+                <p className="mt-4 text-muted font-light leading-relaxed">{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-b border-border">
+        <div className="container-fc py-16 max-w-3xl">
+          <SectionHeading center>Frequently Asked Questions</SectionHeading>
+          <div className="mt-8 divide-y divide-border border-y border-border">
+            {faqs.map((f) => (
+              <details key={f.q} className="group py-4">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 list-none">
+                  <span className="text-lg font-medium uppercase tracking-wide">{f.q}</span>
+                  <span className="text-accent text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <div className="prose-fc mt-3">
+                  <p>{f.a || "Details coming soon."}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Funding acknowledgment */}
+      <section>
+        <div className="container-fc py-14 flex flex-col items-center gap-6 text-center">
+          <Image src="/images/sponsor-acc.png" alt="Arts Culture Catawba" width={160} height={80} className="h-16 w-auto" />
+          <p className="max-w-3xl text-sm font-light text-muted leading-relaxed">
+            This project has been supported in past years by the Arts Culture Catawba through the North Carolina Arts
+            Council, a division of the Department of Natural and Cultural Resources, with funding from the State of North
+            Carolina from the National Endowment for the Arts.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
