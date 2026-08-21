@@ -61,9 +61,12 @@ export default function FilmLabPage() {
           </p>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-4">
           <Button href="https://survey.jacksoninsight.com/zs/V8C5Yv" external>
             Register Your Team
+          </Button>
+          <Button href="/filmlab-2026-flyer.pdf" external variant="outlineFestival">
+            Download the FilmLAB Flyer for More Info
           </Button>
         </div>
       </section>
