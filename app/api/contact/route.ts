@@ -27,40 +27,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
 
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  // Store the submission in Supabase (server-side; bypasses RLS via service role).
-  if (supabaseUrl && serviceKey) {
-    try {
-      const res = await fetch(`${supabaseUrl}/rest/v1/contact_submissions`, {
-        method: "POST",
-        headers: {
-          apikey: serviceKey,
-          Authorization: `Bearer ${serviceKey}`,
-          "Content-Type": "application/json",
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-      if (!res.ok) {
-        const detail = await res.text();
-        console.error("Supabase insert failed:", res.status, detail);
-        return NextResponse.json({ error: "We couldn't save your message. Please try again." }, { status: 502 });
-      }
-    } catch (err) {
-      console.error("Supabase request error:", err);
-      return NextResponse.json({ error: "We couldn't save your message. Please try again." }, { status: 502 });
-    }
-  } else {
-    // Not configured yet (e.g. preview before Supabase keys are added).
-    console.warn(
-      `[contact] Supabase not configured — submission not persisted. Would notify ${CONTACT_TO}:`,
-      { name, email, message }
-    );
-  }
-
-  // Optional email notification via Brevo, if configured.
+  // --- Primary action: email the submission to info@footcandle.org via Brevo ---
+  // This is what the form is for, so it runs first and independently. A failure
+  // in the optional storage step below must never prevent this email.
+  let emailed = false;
   const brevoKey = process.env.BREVO_API_KEY;
   const brevoSender = process.env.BREVO_SENDER_EMAIL;
   if (brevoKey && brevoSender) {
@@ -80,13 +50,49 @@ export async function POST(req: Request) {
           textContent: `Name: ${name}\nEmail: ${email}\n\n${message}`,
         }),
       });
-      if (!res.ok) {
-        console.error("Brevo notification failed (submission still saved):", res.status, await res.text());
-      }
+      emailed = res.ok;
+      if (!res.ok) console.error("Brevo send failed:", res.status, await res.text());
     } catch (err) {
-      console.error("Brevo notification error (submission still saved):", err);
+      console.error("Brevo send error:", err);
+    }
+  } else {
+    console.warn("[contact] Brevo not configured — cannot email the submission.");
+  }
+
+  // --- Best-effort: also store the submission in Supabase, if it's reachable. ---
+  // Non-blocking on purpose: a free-tier Supabase project can be paused after a
+  // period of inactivity, and that must not break the contact form. The email
+  // above is the source of truth; this is just a convenience copy.
+  let stored = false;
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (supabaseUrl && serviceKey) {
+    try {
+      const res = await fetch(`${supabaseUrl}/rest/v1/contact_submissions`, {
+        method: "POST",
+        headers: {
+          apikey: serviceKey,
+          Authorization: `Bearer ${serviceKey}`,
+          "Content-Type": "application/json",
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+      stored = res.ok;
+      if (!res.ok) console.error("Supabase insert failed (non-blocking):", res.status);
+    } catch (err) {
+      console.error("Supabase insert error (non-blocking):", err);
     }
   }
 
-  return NextResponse.json({ ok: true });
+  // Success as long as the message reached us through at least one channel.
+  if (emailed || stored) return NextResponse.json({ ok: true });
+
+  return NextResponse.json(
+    {
+      error:
+        "We couldn't send your message right now. Please email info@footcandle.org directly, and we'll get back to you.",
+    },
+    { status: 502 }
+  );
 }
