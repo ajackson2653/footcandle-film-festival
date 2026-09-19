@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button, SectionHeading } from "@/components/ui";
+import { Sponsors } from "@/components/Sponsors";
 import { site } from "@/lib/site";
 
 // Quick-access boxes under the intro. Colors complement the 2026 poster
@@ -295,6 +296,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Sponsors */}
+      <Sponsors />
 
       {/* Funding acknowledgment */}
       <section className="bg-white text-black">
