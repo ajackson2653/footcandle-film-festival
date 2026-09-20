@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui";
-import { sponsors } from "@/lib/sponsors";
+import { sponsors, friends } from "@/lib/sponsors";
 
 export function Sponsors() {
   return (
@@ -36,6 +36,28 @@ export function Sponsors() {
               </div>
             </a>
           ))}
+        </div>
+
+        {/* Friends of the Festival — individual supporters */}
+        <div className="mt-16 border-t border-border pt-14">
+          <h3 className="text-center text-2xl uppercase md:text-3xl">Friends of the Festival</h3>
+          <span className="mx-auto mt-4 block h-1 w-16" style={{ backgroundColor: "#E4A72B" }} />
+          <p className="mx-auto mt-6 max-w-2xl text-center text-muted font-light">
+            The Footcandle Film Society is made up of over 600 individuals passionate about arts and cultural activities
+            in our area who have been strong supporters of the organization since its inception. Please help us in
+            thanking these individuals for providing additional support to this year&apos;s festival:
+          </p>
+          <ul className="mx-auto mt-8 max-w-4xl columns-1 gap-8 text-center sm:columns-2 md:columns-3 md:text-left">
+            {friends.map((n) => (
+              <li key={n} className="mb-2 break-inside-avoid font-light text-muted">
+                {n}
+              </li>
+            ))}
+          </ul>
+          <p className="mx-auto mt-10 max-w-2xl text-center text-sm italic text-muted">
+            To those that have contributed more recently and are not listed above, and all others that supported us this
+            year, please accept our thanks!
+          </p>
         </div>
       </div>
     </section>

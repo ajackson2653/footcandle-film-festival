@@ -38,3 +38,36 @@ export const sponsors: Sponsor[] = [
   { name: "Richey May", logo: "richey-may.png", url: "https://richeymay.com/" },
   { name: "Taste Full Beans Coffeehouse", logo: "tfb-coffeehouse.png", url: "https://www.tastefullbeans.com/" },
 ];
+
+// "Friends of the Festival" — individual supporters listed in the program
+// (alphabetical). Add or remove names here.
+export const friends: string[] = [
+  "John & Christine Almeida",
+  "Eddie Beard & Larry Johnson",
+  "Beth & Rand Brandes",
+  "John & Constance Bools",
+  "Lynn Carlton",
+  "Cavelle & Elizabeth Davolio",
+  "Michael & Michelle Ellwanger",
+  "Pamela Elske-Leonetti & David Leonetti",
+  "Jeremy & Katie Fisher",
+  "Randall Fritz",
+  "Boyd & Elin George",
+  "Erin & Rob Hooks",
+  "Louise & Harold Humphrey",
+  "Margaret & Tony Jackson",
+  "Charlene & Norman Johnson",
+  "Jane & John Jonkhoff",
+  "Kent Kerley",
+  "Kirby Kepford",
+  "Jearld & Carolyn Leonhardt",
+  "Laura & Jon Levinson",
+  "Paul & Marie Martino",
+  "Wanda Pitchford",
+  "Carolyn & Gary Pope",
+  "Janice Sakkal",
+  "Wade & Kathleen Shuford",
+  "John Teeter",
+  "Charlotte Williams & Michael Willis",
+  "Boyd & Anita Wilson",
+];
